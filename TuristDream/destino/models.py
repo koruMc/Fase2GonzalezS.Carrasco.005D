@@ -7,7 +7,6 @@ import uuid
 class Ciudad(models.Model):
 	"""Model representing an author."""
 	name = models.CharField(max_length=100)
-	summary = models.TextField(max_length=1000)
 
 	class Meta:
 		ordering = ['name']
@@ -24,8 +23,6 @@ class Destino(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     name = models.CharField(max_length=200)
     ciudad = models.ForeignKey('Ciudad', on_delete=models.SET_NULL, null=True, blank=False)
-    summary = models.TextField(max_length=1000)
-    url = models.URLField(max_length=100, default='')
     image = models.ImageField(upload_to='images/', null=True, blank=True)
 
     
