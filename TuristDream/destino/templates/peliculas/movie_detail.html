@@ -1,0 +1,57 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+{% load static %}
+<header class="masthead">
+    <div class="container d-flex flex-column">
+<h1 class="page-section-heading text-uppercase text-secondary mb-0" > {{movie.title}}
+  
+          <!--===============================================================================================-->
+          {% if user.is_authenticated  %}{% if user.is_staff %}
+
+         <a class="btn btn-default" href="{% url 'movie_update' pk=movie.pk %}">Editar    <span class="glyphicon glyphicon-pencil"></span></a>
+          <a class="btn btn-default" href="{% url 'movie_delete' pk=movie.pk %}">Eliminar    <span class="glyphicon glyphicon-trash"></span></a>
+          <!--=======aqui codigo=======-->
+        
+          {% else %}{% endif %}{% else %}{% endif %}
+          <!--===============================================================================================-->    
+  
+  </h1>
+    
+   
+    <div class="row">
+  
+        <div class="col-md-8">
+            <div class="embed-container">
+                {{movie.url}}
+                <iframe width="560" height="315" src={{movie.url}} allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          </div>
+        <div class="col-md-4">
+          <br>
+          <h3 class="descripcion text-secondary">Descripción</h3>
+          <br>
+          <p class="texto">{{movie.summary}}</p>
+            <br>
+          <h3 class="descripcion text-secondary">Género</h3>
+          <br>
+
+          {% if movie.genre %}
+            <p class="texto">{{movie.genre.name}} </p>
+
+            <a href="{% url 'genre-detail' movie.genre.pk %}" class="btn btn-primary">
+              Ver más
+            </a>
+          {% else %}
+            <p class="texto">No hay géneros asociados a esta pelicula</p>
+
+          {% endif %}
+          
+        </div>
+    <div class="embed-container">
+        <iframe width="700" height="450" src={{movie.url}} allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      </div>
+    </div>
+      </header>
+
+
+{% endblock %}

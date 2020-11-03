@@ -1,0 +1,55 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+{% load static %}
+  
+<header class="masthead">
+ <!--===============================================================================================-->
+          {% if user.is_authenticated  %}{% if user.is_staff %}
+
+        
+          <!--=======aqui codigo=======--> 
+<div class="page-section portfolio container page-section-heading text-uppercase text-secondary mb-0 ">
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Borrar Pelicula</h2>
+    
+        <!-- Icon Divider -->
+        <div class="divider-custom">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon">
+            <i class="fas fa-film"></i>
+          </div>
+          <div class="divider-custom-line"></div>
+        </div>
+<p></p>
+<br>
+<center><h3>¿Estás seguro de borrar esta pelicula?</h3>
+    <br>
+    <h4>Titulo: {{ movie.title }}</h4>
+    <br>
+    <div style="height: 300px; width: 500px;">
+        <img class="card-img-top card mb-2" src="{{ movie.image.url}}">
+    </div>
+
+<form action="" method="POST">
+{% csrf_token %}
+ <div style="width: 50%;">
+    <a href="{% url 'movie-detail' movie.pk %}"class="btn btn-primary btn-xl" style="float: left;">Atras</a>
+    <button type="submit" class="save btn btn-primary btn-xl" style="float: right;">Borrar</button>
+ </div>
+ 
+</form>
+
+</center>
+</div>
+        
+        
+          {% else %}<div class="container">
+              <p class="page-section-heading text-center text-uppercase text-secondary mb-0">Usted no tiene los permisos necesarios para realizar esta acción!!</p>
+                  </div>
+          {% endif %}{% else %}<div class="container">
+              <p class="page-section-heading text-center text-uppercase text-secondary mb-0">Usted no tiene los permisos necesarios para realizar esta acción!!</p>
+                  </div>{% endif %}
+          <!--===============================================================================================-->  
+          
+</header>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<section class="page-section masthead" id="contact">
+          <!--===============================================================================================-->
+          {% if user.is_authenticated  %}{% if user.is_staff %}
+
+        
+          <!--=======aqui codigo=======-->
+          <div class="container">
+                  <!-- Contact Section Heading -->
+          <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Pelicula</h2>
+    
+          <!-- Icon Divider -->
+          <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon">
+              <i class="fas fa-film"></i>
+            </div>
+            <div class="divider-custom-line"></div>
+          </div>
+    
+          <!-- Contact Section Form -->
+    <div class="row">
+    <div class="col-lg-8 mx-auto">
+        
+    <p></p>
+    <form method="POST" class="post-form" enctype="multipart/form-data">{% csrf_token %}
+        
+        <div style="font-size: 12px;">
+        {{ form.as_p }}
+        </div>
+
+        
+        <button type="submit" class="save btn btn-primary btn-xl" style="float: right;   margin-top: 1.5%">Guardar</button>
+                  
+        <br>
+        
+    </form>
+
+    <button onClick="javascript:history.go(-1)" class="btn btn-primary btn-xl" style="float:left;;">Atrás</button>
+
+    </div>
+        
+        
+          {% else %}<div class="container">
+              <p class="page-section-heading text-center text-uppercase text-secondary mb-0">Usted no tiene los permisos necesarios para realizar esta acción!!</p>
+                  </div>
+          {% endif %}{% else %}<div class="container">
+        <p class="page-section-heading text-center text-uppercase text-secondary mb-0">Usted no tiene los permisos necesarios para realizar esta acción!!</p>
+            </div>
+    {% endif %}
+          <!--===============================================================================================-->  
+          
+</section>
+
+{% endblock %}

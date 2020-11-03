@@ -1,0 +1,59 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    {% load static %}
+
+    <header class="masthead">
+<!--===============================================================================================-->
+                  {% if user.is_authenticated  %}{% if user.is_staff %}
+
+        
+                  <!--=======aqui codigo=======-->
+        <div class="page-section portfolio container page-section-heading text-uppercase text-secondary mb-0 text-center ">
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Borrar Género</h2>
+            
+                <!-- Icon Divider -->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <div class="divider-custom-line"></div>
+            </div>
+                
+            <br>
+            <center>
+            
+            <h3>¿Estás seguro de borrar este género?</h3>
+            <br>
+            <br>
+            <h4>Nombre: </h4> <p class="texto text-center"> {{ genre.name }}</p>
+            <br>
+            <h4>Descripción: </h4> <p class="texto text-center"> {{ genre.summary }}</p>
+
+            <br>
+            <br>
+
+            <form action="" method="POST">
+                {% csrf_token %}
+             <div style="width: 50%;">
+                <a href="{% url 'genre-detail' genre.pk %}"class="btn btn-primary btn-xl" style="float: left;">Atras</a>
+                <button type="submit" class="save btn btn-primary btn-xl" style="float: right;">Borrar</button>
+             </div>
+             
+            </form>
+            
+            </center>
+        </div>
+                  
+                
+                  {% else %}<div class="container">
+                        <p class="page-section-heading text-center text-uppercase text-secondary mb-0">Usted no tiene los permisos necesarios para realizar esta acción!!</p>
+                            </div>
+                    {% endif %}{% else %}<div class="container">
+                        <p class="page-section-heading text-center text-uppercase text-secondary mb-0">Usted no tiene los permisos necesarios para realizar esta acción!!</p>
+                            </div>{% endif %}
+                  <!--===============================================================================================-->  
+                  
+    </header>
+{% endblock %}

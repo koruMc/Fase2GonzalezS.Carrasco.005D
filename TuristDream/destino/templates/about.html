@@ -1,0 +1,117 @@
+{% extends "base_generic.html" %}
+{% block content %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+
+    {% load static %}
+    <link rel="stylesheet" href=" {% static 'css/estilos.css' %}" >
+    <link rel="stylesheet" href=" {% static 'css/bootstrap.css' %}" >
+    
+
+    <title>Turismo Patagonia - Conocenos</title>
+  </head>
+  <body>
+  
+
+  <div class="jumbotron-header" style=" background-image: linear-gradient(to bottom, rgba(255,255,255,0.6) 100%,rgba(255,255,255,0.9) 100%), url('img/trekkingheader.jpg')">  
+        <div class="container">
+          <h1 class="display-header">TouristDreams</h1>
+          <div class="col-md-6-header">
+          <h6>En TouristDreams estamos por la calidad, y una prueba de nuestro compromiso, es que estamos orgullosos de ser certificados por Sernatur.
+            TouristDreams nace el año 2005 luego que 4 estudiantes de Turismo Aventura de DuocUc, decidieran empezar su aventura entregándole un espacio a toda persona que tuviera las ganas de conocer nuestro Hermoso país Chile.</h6>
+            <h6>TouristDreams comenzó primero como un Blog de entretención que mostraba las maravillas que nos podíamos encontrar a lo largo de nuestro país y hoy poco a poco nos estamos convirtiendo en una de las fuentes mas grande de información turística en Todo Chile.
+            Hoy el equipo de TouristDreams lo conforman mas de 185 personas de diferentes sectores de nuestro país, que siempre están con la disposición de ayudar y orientar a todos los turistas que quieran maravillarse de cada centímetro que tenemos a lo largo de Chile
+            </h6>
+        </div>
+      </div>
+    </div>
+
+      <hr>
+      <div class="container">
+      <div class="jumbotron-team">
+      
+      <div class="row">
+        <div class="col-md-6">
+          <img src="{% static 'img/team1.png' %}" class=teamimg>
+        </div>
+
+        <div class="col-md-6">
+          <div class="details">
+            <h2>Ignacio Carrasco - Técnico en Turismo</h2>
+            <h6>Nacido el 19 de Enero de 2000,en la humilde comunidad de Putaendo.Apasionado por la 
+              flora y fauna del pais,a los cortos 14 años comenzo a asistir a pequeños cursos dictados por 
+              el Ministerio de Turismo de Chile.
+              Ya con 18 Años se decidio en estudiar Turismo en DuocUc donde con los conocimientos podia porfin 
+              compartir y ayudar a otros a conocer las maravillas de nuestro pais Chile.
+
+
+            </h6>
+          </div>
+        </div>
+
+      </div>
+
+      <hr>
+
+      <div class="row">
+        <div class="col-md-6">
+          <img src="{% static 'img/team2.png' %}" class=teamimg>
+        </div>
+
+        <div class="col-md-6">
+          <div class="details">
+            <h2>Ignacio "Koru" Gonzalez - Experto en Pudus</h2>
+            <h6>Nacido el 15 de Noviembre del 1996,fue abandonado por su padres a temprana edad y su niñez la paso
+              en el Orfanato "Chiquito Feo" en la comunidad de Chile Chico.
+              Su Sueño siempre fue conocer a sus padres y viajar por todo el mundo,lastima que nunca pudo y solo
+              se tuvo que conformar con recorrer Chile.
+              El año 2015 comenzó a estudiar a la especie de los "Pudus" en chile y ya cuenta con mas de 4 años
+              de experiencia en Pudus.
+
+
+
+            </h6>
+          </div>
+        </div>
+
+      </div>
+
+      
+
+
+
+
+
+
+
+    </div>
+  </div>
+
+
+
+
+
+
+      <div class="video-container">
+        <div class="color-overlay"></div>
+        <video autoplay loop muted>
+            <source src="{% static 'img/loopblack.mp4' %}" type="video/mp4">
+        </video>
+      </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.js" ></script>
+  </body>
+</html>
+
+{% endblock %}

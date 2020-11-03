@@ -1,0 +1,286 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}" >
+    
+  
+    
+    <script language="JavaScript" type="text/javascript">
+    mensagem = prompt("Por favor, ingresa tu nombre",'');
+      
+      if (mensagem==null) {
+        alert("¡Hola visitante!, Bienvenido a TouristDreams")
+      }else{
+      if (mensagem=='') {
+        alert("¡Hola visitante!, Bienvenido a TouristDreams")
+      }else{
+        alert("¡Hola "+mensagem+"! Bienvenido a TouristDreams");
+      }
+      }
+    </script>
+
+      <script>
+        function startTime() {
+            var today = new Date();
+            var hr = today.getHours();
+            var min = today.getMinutes();
+            var sec = today.getSeconds();
+            
+            min = checkTime(min);
+            sec = checkTime(sec);
+            document.getElementById("clock").innerHTML = hr + " : " + min + " : " + sec;
+            var time = setTimeout(function(){ startTime() }, 500);
+        }
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+          }
+      </script>
+
+      <script>
+        
+              function CLPEuro(valNum) {
+                document.getElementById("inputEuros").value=valNum*0.0011;
+              }
+              function EuroCLP(valNum) {
+                document.getElementById("inputCLP").value=valNum*912.60;
+              }
+      </script>
+
+        <script>
+
+              function CLPDolares(valNum) {
+                document.getElementById("inputDolares").value=valNum*0.0013;
+              }
+              function dolaresCLP(valNum) {
+                document.getElementById("inputCLPs").value=valNum*783.30;
+              }
+        </script>
+
+     
+    <title>Turismo Patagonia</title>
+  </head>
+  <body onload="startTime()">
+
+    
+    
+
+
+
+
+      <!-- CARRUSEL -->
+      
+      <div id="carrusel-index" class="carousel slide carousel-fade" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carrusel-index" data-slide-to="0" class="active"></li>
+          <li data-target="#carrusel-index" data-slide-to="1"></li>
+          <li data-target="#carrusel-index" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static 'img/img1.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Torres del Paine</h5>
+              <p>Ubicada entre la Cordillera de los Andes y la estepa Patagónica.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'img/img2.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Embalse El Yeso</h5>
+              <p>Reserva artificial de agua, acumulada mediante una represa ubicado en la cordillera de los Andes.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'img/img3.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Volcán Villarrica</h5>
+              <p>Estratovolcán chileno de 2450 metros, Es uno de los más activos de Sudamérica y tiene una forma cónica casi perfecta.</p>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carrusel-index" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#carrusel-index" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Siguiente</span>
+        </a>
+      </div>
+
+      
+      
+      
+      <main role="main">
+
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron">
+          <div class="container">
+            <h1 class="display-3">Bienvenidos a TouristDreams</h1>
+            <p>Empresa con mas de 15 años de experiencia en el area turistica,a lo largo de todo Chile</p>
+            <p><a class="btn btn-primary btn-lg" href=" {% url 'about' %}" role="button">Conocenos mas... &raquo;</a></p>
+          </div>
+        </div>
+      
+        <div class="container">
+          <div class="card-deck">
+            <div class="card">
+              <img class="card-img-top" src="{% static 'img/dato1.png' %}"  alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">POTENCIA ASTRONÓMICA</h5>
+                <p class="card-text">Chile es hogar de algunos de los observatorios astronómicos 
+                  científicos más importantes del mundo. Estos se ubican al norte de nuestro país, 
+                  desde la Región de Coquimbo hasta la Región de Atacama, generalmente hacia el interior 
+                  de la cordillera. Lo que muchos no saben es que estos observatorios pueden ser visitados 
+                  por el público general, y realizan distintos recorridos de sus instalaciones.</p>
+              </div>
+              
+            </div>
+            <div class="card">
+              <img class="card-img-top" src="{% static 'img/dato2.png' %}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">LA OCTAVA MARAVILLA DEL MUNDO</h5>
+                <p class="card-text">En la región de Magallanes se encuentra el Parque Nacional 
+                  Torres del Paine, principal destino turístico de Chile. Sus bellos parajes fueron 
+                  elegidos la Octava Maravilla del Mundo el año 2013, entre 300 lugares de 50 países.</p>
+              </div>
+              
+            </div>
+            <div class="card">
+              <img class="card-img-top" src="{% static 'img/dato3.png' %}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">LAS MOMIAS MÁS ANTIGUAS DEL MUNDO</h5>
+                <p class="card-text">Las momias Chinchorros fueron descubiertas hace aproximadamente 100 años 
+                  en el árido desierto de Atacama. Según estudios realizados, los cuerpos fueron momificados 
+                  hace más de 7.000 años. Lamentablemente, debido al aumento de humedad en el norte de Chile, 
+                  ciertas bacterias invadieron los restos de las antiguas momias y degradaron el tejido, 
+                  dándole un aspecto negruzco.</p>
+              </div>
+              
+            </div>
+            <div class="card">
+              <img class="card-img-top" src="{% static 'img/dato4.png' %}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">EL DESIERTO FLORIDO</h5>
+                <p class="card-text">Los chilenos llaman desierto florido a un fenómeno que se produce en 
+                  años en que tiene lugar un inusual aumento de las precipitaciones. El resultado son 
+                  kilómetros de paisaje árido y desolado transformados en un paraíso multicolor. 
+                  Numerosas especies vegetales, muchas de ellas endémicas de Chile, afloran tras haber 
+                  sobrevivido años en estado de latencia.</p>
+              </div>
+            </div>
+          </div>
+      
+          <hr>
+      
+        </div> <!-- /container   230x180 --> 
+
+        <div class="container">
+          <div class="jumbotron-tools">
+        <div class="row">
+          <div class="col-3">
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Hora de Chile</a>
+              <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Euro -> CLP</a>
+              <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Dolar -> CLP</a>
+            </div>
+          </div>
+          <div class="col-9">
+            <div class="tab-content" id="v-pills-tabContent">
+              <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+
+                <div id="clockdate">
+                  <div class="clockdate-wrapper">
+                    <div id="clock"></div>
+                  </div>
+                </div>
+
+
+
+
+              </div>
+              <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+
+                <h2>Conversor de moneda.</h2>
+                <p>
+                <label>CLP</label>
+                <input id="inputCLP" type="number" placeholder="CLP" oninput="CLPEuro(this.value)" onchange="CLPEuro(this.value)">
+              </p>
+              <p>
+                <label>Euros</label>
+                <input id="inputEuros" type="number" placeholder="Euros" oninput="EuroCLP(this.value)" onchange="EuroCLP(this.value)">
+              </p>
+
+
+              </div>
+              <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+
+                <h2>Conversor de moneda.</h2>
+                <p>
+                <label>CLP</label>
+                <input id="inputCLPs" type="number" placeholder="CLP" oninput="CLPDolares(this.value)" onchange="CLPDolares(this.value)">
+              </p>
+              <p>
+                <label>Dolares</label>
+                <input id="inputDolares" type="number" placeholder="Dolares" oninput="dolaresCLP(this.value)" onchange="dolaresCLP(this.value)">
+              </p>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+
+
+      
+      </main>
+
+      
+
+
+
+
+      <div class="video-container">
+        <div class="color-overlay"></div>
+        <video autoplay loop muted>
+            <source src="{% static 'img/skyback.mp4' %}" type="video/mp4">
+        </video>
+      </div>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.js" ></script>
+    <script src="js/funciones.js" ></script>
+    
+  </body>
+</html>
+
+{% endblock %}

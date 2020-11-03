@@ -1,0 +1,147 @@
+{% extends "base_generic.html" %}
+{% block content %}
+
+<html lang="en"></html>
+
+
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+<script src="js/bootstrap.js" ></script>
+<!------ Include the above in your HEAD tag ---------->
+
+{% load static %}
+
+<link rel="stylesheet" href=" {% static 'css/estilos.css' %}" >
+<link rel="stylesheet" href=" {% static 'css/bootstrap.css' %}" >
+
+
+<title>Turismo Patagonia - Contáctanos</title>
+<head>
+
+  <script>
+    $(function() 
+    {
+      $("#mi-formulario").validate({
+           rules: {
+                  email: {
+                      required: true,
+                      email: true
+                  },
+                  password: "required",
+                  name: "required",
+                  pais: "required",
+                  comment: "required",
+                  lastname: "required",
+                  fono:{ 
+                    required: true,
+                    digits: true
+                  } 
+              }, //rules
+          messages: {
+              name: {required: 'Ingrese sus Nombres',
+                     lettersonly: 'Ingrese Nombre Valido'},
+              lastname: {required: 'Ingrese sus Apellidos'},
+              pais: {required: 'Seleccione una Opción'},
+              comment: {required: 'Ingrese su Comentario'},
+              
+              email: {
+                  required: 'Ingresa tu correo electrónico',
+                  email: 'Formato de correo no válido'
+              },
+              fono:{
+                  required: 'Ingrese un número de celular',
+                  digits: 'Ingrese solo Numeros',
+                  minlength: 'Cantidad de digitos insuficiente'
+              },     
+          }//messages
+      }); //$('#mi-formulario').validate
+  }); //function
+</script>
+
+
+
+ 
+</head>
+
+
+
+<body>
+
+
+<div class="container contact">
+	<div class="row">
+		<div class="col-md-3">
+			<div class="contact-info">
+				<img src="{% static 'img/LogoIcono.png' %}" alt="image"/>
+				<h2>Contáctanos!</h2>
+				<h5>Estamos ansiosos por atender tus dudas y/o Sugerencias</h5>
+			</div>
+    </div>
+    
+
+
+		<div class="col-md-9">
+			<div class="contact-form">
+        <form id="mi-formulario" method="post" class="form-horizontal" action= "{% url 'index' %}" >
+        
+        <label>Nombres: </label>
+        <input type="text" name="name" required placeholder="Ingrese nombre">
+
+        <label>Apellidos: </label>
+        <input type="text" name="lastname" required placeholder="Ingrese apellidos">
+
+				<label>Correo Electrónico: </label>
+        <input type="text" name="email" required placeholder="Ingrese correo">
+      
+        <label>Telefono: </label>
+        <input type="text" name="fono" minlength="9" required placeholder="Ingrese número">
+        
+        <label >Pais: </label>
+        <select name="pais" id="select" required>
+            <option selected disabled value="">Pais...</option>
+            <option>Chile</option>
+            <option>Perú</option>
+            <option>Argentina</option>
+            <option>Brasil</option>
+            <option>Colombia</option>
+            <option>Paraguay</option>
+            <option>Uruguay</option>
+            <option>Otro</option>
+        </select>
+          
+        <label>Ingresa Tu Comentario:</label>
+				<textarea required class="form-control" rows="5" name="comment" placeholder="Comentanos acá..." ></textarea >
+
+        <hr>
+        
+        
+        <button >Enviar</button>
+
+        
+
+
+
+
+      
+        
+      </form>
+        
+      
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="video-container">
+  <div class="color-overlay"></div>
+  <video autoplay loop muted>
+      <source src="{% static 'img/skyback.mp4' %}" type="video/mp4">
+  </video>
+</div>
+</body>
+</html>
+
+{% endblock %}
