@@ -31,4 +31,24 @@ def contact(request):
     )
 
 
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
+from django.views import generic
 
+
+
+class DestinoCreate(CreateView):
+    model = Destino
+    fields = '__all__'
+
+class DestinoUpdate(UpdateView):
+    model = Destino
+    fields = '__all__'
+
+class DestinoDelete(DeleteView):
+    model = Destino
+    sucess_url = reverse_lazy('Destino')
+
+
+class DestinoDetailView(generic.DetailView):
+    model=Destino
