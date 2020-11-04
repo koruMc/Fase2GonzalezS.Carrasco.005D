@@ -55,7 +55,7 @@ ROOT_URLCONF = 'TuristDream.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['./template',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
