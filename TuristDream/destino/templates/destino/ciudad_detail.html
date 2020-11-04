@@ -1,0 +1,34 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+{% load static %}
+
+<header class="masthead">
+    <div class="container d-flex flex-column">
+        <h1 class="page-section-heading text-uppercase text-secondary mb-0" > {{ciudad.name}} 
+            
+          <!--===============================================================================================-->
+          {% if user.is_authenticated  %}{% if user.is_staff %}
+
+         <a class="btn btn-default" href="{% url 'ciudad_update' pk=ciudad.pk %}">Editar    <span class="glyphicon glyphicon-pencil"></span></a>
+            <a class="btn btn-default" href="{% url 'ciudad_delete' pk=ciudad.pk %}">Eliminar    <span class="glyphicon glyphicon-trash"></span></a>
+          <!--=======aqui codigo=======-->
+        
+          {% else %}{% endif %}{% else %}{% endif %}
+          <!--===============================================================================================-->   
+            
+        </h1>
+
+        <div class="col-md-8" style="margin-top: 5%;">
+
+        <h3 class="descripcion text-secondary">Descripción</h3>
+        <br>
+          
+        <br>
+        </div>
+
+    </div>
+</header>
+
+
+{% endblock %}

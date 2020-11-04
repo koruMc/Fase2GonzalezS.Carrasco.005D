@@ -1,0 +1,48 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+{% load static %}
+<header class="masthead">
+    <div class="container d-flex flex-column">
+<h1 class="page-section-heading text-uppercase text-secondary mb-0" > {{destino.name}}
+  
+          <!--===============================================================================================-->
+          {% if user.is_authenticated  %}{% if user.is_staff %}
+
+         <a class="btn btn-default" href="{% url 'destino_update' pk=destino.pk %}">Editar    <span class="glyphicon glyphicon-pencil"></span></a>
+          <a class="btn btn-default" href="{% url 'destino_delete' pk=destino.pk %}">Eliminar    <span class="glyphicon glyphicon-trash"></span></a>
+          <!--=======aqui codigo=======-->
+        
+          {% else %}{% endif %}{% else %}{% endif %}
+          <!--===============================================================================================-->    
+  
+  </h1>
+    
+   
+    <div class="row">
+  
+        <div class="col-md-8">
+          <img class="card-img-top card mb-2" src="{{ destino.image.url}}">
+        <div class="col-md-4">
+          <br>
+          
+          <h3 class="descripcion text-secondary">Ciudad</h3>
+          <br>
+
+          {% if destino.ciudad %}
+            <p class="texto">{{destino.ciudad.name}} </p>
+
+            <a href="{% url 'ciudad-detail' destino.ciudad.pk %}" class="btn btn-primary">
+              Ver más
+            </a>
+          {% else %}
+            <p class="texto">No hay Ciudades asociadas a este Destino</p>
+
+          {% endif %}
+          
+        </div>
+    
+      </header>
+
+
+{% endblock %}

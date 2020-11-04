@@ -66,21 +66,27 @@
         <a class="nav-link" href="{% url 'about' %}">Quienes Somos</a>
       </li>
 
+      
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'contact' %}">Contáctanos</a>
+      </li> 
+      
+      
       <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="{% url 'index' %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Proximamente
+            Admin
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{% url 'index' %}">Tours en Chile</a>
-            <a class="dropdown-item" href="{% url 'index' %}">Canal Youtube</a>
-            <a class="dropdown-item" href="{% url 'index' %}">Capacitaciones</a>
+            
+            <a class="dropdown-item" href="{% url 'ciudad_create' %}">Agregar Ciudad</a>
+            <a class="dropdown-item" href="{% url 'destino_create' %}">Agregar Destino</a>
+            
+            
             
           </div>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'contact' %}">Contáctanos</a>
-        </li>    
+          
          
       
     </ul>
@@ -89,7 +95,7 @@
 
 
   
- {% block content %}{% endblock %}
+ 
 
  
 
@@ -97,3 +103,5 @@
   
  </body>
 </html>
+
+{% block content %}{% endblock %}

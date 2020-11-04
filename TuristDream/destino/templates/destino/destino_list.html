@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Destino List: </h1>
+
+    {% if destino_list %}
+
+        <ul>
+            {% for destino in destino_list %}
+            <li>
+                <a href="{{ destino.get_absolute_url }}"> {{ destino.name }} </a> ({{ destino.ciudad.name }})
+            </li>
+            {% endfor %}
+
+
+        </ul>
+
+    {% else %}
+        <p>No hay Destinos Disponibles</p>
+
+    {% endif %}
+{% endblock %}
