@@ -1,5 +1,5 @@
 from django.test import TestCase
-from peliculas.models import Ciudad, Destino
+from destino.models import Ciudad, Destino
 
 class CiudadModelTest(TestCase):
 

@@ -2,7 +2,7 @@ from django.test import TestCase
 from django.urls import reverse
 from django.core.files.uploadedfile import SimpleUploadedFile
 
-from peliculas.models import Ciudad, Destino
+from destino.models import Ciudad, Destino
 
 class CiudadListViewTest(TestCase):
     @classmethod

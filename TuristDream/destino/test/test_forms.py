@@ -1,6 +1,6 @@
 from django.test import TestCase
-from peliculas.forms import CiudadForm, DestinoForm
-from peliculas.models import Ciudad, Destino
+from destino.forms import CiudadForm, DestinoForm
+from destino.models import Ciudad, Destino
 from django.core.files.uploadedfile import SimpleUploadedFile
 
 class CiudadFormsTest(TestCase):
