@@ -6,12 +6,14 @@ from django.core.files.uploadedfile import SimpleUploadedFile
 class CiudadFormsTest(TestCase):
     def test_valid_form(self):
         c = Ciudad.objects.create(name='Prueba1')
-        form = GenreForm(data=data)
+        data = {'name': c.name,}
+        form = CiudadForm(data=data)
         self.assertTrue(form.is_valid())
 
     def test_invalid_form(self):
         c = Ciudad.objects.create(name='',)
-        form = GenreForm(data=data)
+        data = {'name': c.name,}
+        form = CiudadForm(data=data)
         self.assertFalse(form.is_valid())
 
 class DestinoFormsTest(TestCase):
@@ -32,6 +34,6 @@ class DestinoFormsTest(TestCase):
     def test_invalid_form(self):
         c = Ciudad.objects.create(name='Accion')
         d = Destino.objects.create(name='', ciudad=c, url='https://www.youtube.com/embed/rslZ-fHiSuI')
-        data = {'name': d.name 'ciudad': d.ciudad, 'url' : d.url, }
+        data = {'name': d.name,'ciudad': d.ciudad, 'url' : d.url, }
         form = DestinoForm(data=data)
         self.assertFalse(form.is_valid())
