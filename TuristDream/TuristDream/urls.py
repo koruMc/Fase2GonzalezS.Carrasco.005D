@@ -18,6 +18,7 @@ from django.urls import path
 from django.urls import include
 from django.conf.urls.static import static
 from django.conf import settings
+from django.views.generic.base import TemplateView
 
 
 from rest_framework import routers
@@ -28,17 +29,18 @@ urlpatterns = [
 path ('admin/', admin.site.urls),
 path ('destino/', include('destino.urls')),
 path ('accounts/', include('django.contrib.auth.urls')),
+path ('',TemplateView.as_view(template_name='index.html'),name='index')
 
 ]
 
 
-'''
+
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
 
 
-urlpatterns = [
+urlpatterns += [
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
@@ -46,4 +48,3 @@ urlpatterns = [
 
 if settings.DEBUG: # new
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-'''
