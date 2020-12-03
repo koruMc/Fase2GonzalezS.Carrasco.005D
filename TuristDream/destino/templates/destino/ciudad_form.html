@@ -9,7 +9,7 @@
 <section class="page-section masthead" id="contact">
      
           <!--===============================================================================================-->
-          {% if user.is_authenticated  %}{% if user.is_staff %}
+          {% if user.is_authenticated  %}
 
          <div class="container">
                   <!-- Contact Section Heading -->
@@ -43,9 +43,6 @@
           <!--=======aqui codigo=======-->
         
           {% else %}<div class="container">
-              <p class="page-section-heading text-center text-uppercase text-secondary mb-0">Usted no tiene los permisos necesarios para realizar esta acción!!</p>
-                  </div>
-          {% endif %}{% else %}<div class="container">
         <p class="page-section-heading text-center text-uppercase text-secondary mb-0">Usted no tiene los permisos necesarios para realizar esta acción!!</p>
 </div>{% endif %}
           <!--===============================================================================================-->  

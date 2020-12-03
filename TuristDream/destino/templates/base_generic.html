@@ -72,8 +72,27 @@
       
       <li class="nav-item">
         <a class="nav-link" href="{% url 'contact' %}">Contáctanos</a>
-      </li> 
+      </li>
+
       
+      
+
+      {% if user.is_authenticated  %}
+          
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">Cerrar Sesión</a>
+          </li> 
+
+          {% else %}
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Ingresar</a>
+          </li> 
+          {% endif %}
+
+
+
+
       
       <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="{% url 'index' %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

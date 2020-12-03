@@ -86,7 +86,7 @@ def ciudad_edit(request, pk):
             post.save()
             return redirect('ciudad-detail', pk=post.pk)
     else:
-        form = GenreForm(instance=post)
+        form = CiudadForm(instance=post)
     return render(request, 'destino/ciudad_form.html', {'form': form})
 
 def destino_new(request):

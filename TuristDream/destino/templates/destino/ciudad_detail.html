@@ -8,13 +8,13 @@
         <h1 class="page-section-heading text-uppercase text-secondary mb-0" > {{ciudad.name}} 
             
           <!--===============================================================================================-->
-          {% if user.is_authenticated  %}{% if user.is_staff %}
+          {% if user.is_authenticated  %}
 
          <a class="btn btn-default" href="{% url 'ciudad_update' pk=ciudad.pk %}">Editar    <span class="glyphicon glyphicon-pencil"></span></a>
             <a class="btn btn-default" href="{% url 'ciudad_delete' pk=ciudad.pk %}">Eliminar    <span class="glyphicon glyphicon-trash"></span></a>
           <!--=======aqui codigo=======-->
         
-          {% else %}{% endif %}{% else %}{% endif %}
+          {% else %}{% endif %}
           <!--===============================================================================================-->   
             
         </h1>
